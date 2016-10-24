@@ -1,2 +1,16 @@
-# Assignment1
-Assignment 1 from Vanessa
+# Assignment 1
+Write a program that asks the user to enter a time duration in hours, minutes, and seconds and then displays the time in terms of seconds in decimal format. There are 60 minutes in an hour, and there are 60 seconds in a minute. Represent these number of minutes in an hours and number of seconds in a minute as constant in your program. You should use a separate variable for each input value.
+
+Please make sure that minutes and seconds are less than or equal to 59. If the users enter this more than 59 or negative it should be asking him to re-enter the information. 
+
+A sample run should look like this (user input is in bold):
+
+Enter hours, minutes, and seconds:
+
+First, enter the hours: 10
+
+Next, enter the minutes: 30
+
+Finally, enter the seconds:30
+
+10 hours, 30 minutes, 30 seconds = 37830 seconds
