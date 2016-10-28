@@ -19,7 +19,7 @@ Finally, enter the seconds:30
 I used the to_string() method to append integers to a string, so C++11 is required.
 
 Units are still displayed in the output if 0 is entered, but the program does adjust the output to display singular units when there is only one:
-  0 Hours
-  1 Hour
-  3 Hours
+*  0 Hours
+*  1 Hour
+*  3 Hours
   
