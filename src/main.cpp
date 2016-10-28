@@ -2,42 +2,47 @@
 
 using namespace std;
 
+int getInputFromUser(string, int);
 int calculateSeconds(int, int, int);
+string formatOuput(int, int, int);
 
 int main()
 {
-    int hours;
-    int minutes;
-    int seconds;
+    cout << "Please enter a length of time:" << endl;
     
-    cout << "Please enter a length of time:" << endl << "Hours: "; 
-    cin >> hours;
-    
-    while (hours < 0)
-    {
-        cout << "Hours must be a positive number.  Please try again." << endl << "Hours: ";
-        cin >> hours;
-    };
-    
-    cout << "Minutes: ";
-    cin >> minutes;
-   
-    while (minutes < 0 || minutes > 59)
-    {
-        cout << "Minutes must be within the range 0 - 59.  Please try again." << endl << "Minutes: ";
-        cin >> minutes;
-    };
-    
-    cout << "Seconds: ";
-    cin >> seconds;
-   
-    while (seconds < 0 || seconds > 59)
-    {
-        cout << "Seconds must be within the range 0 - 59.  Please try again." << endl << "Seconds: ";
-        cin >> seconds;
-    };
+    int hours = getInputFromUser("Hours", 9999);
+    int minutes = getInputFromUser("Minutes", 59);
+    int seconds = getInputFromUser("Seconds", 59);
 
-    string output = "";
+    cout << formatOuput(hours, minutes, seconds) << endl;
+    
+    return 0;
+}
+
+int getInputFromUser(string unit, int max)
+{
+    int input;
+    
+    cout << unit << ": ";
+    cin >> input;
+    
+    while(input < 0 || input > max)
+    {
+        cout << unit << " must be within the range 0 - " << to_string(max) << ".  Please try again." << endl << unit << ": ";
+        cin >> input;
+    }
+    
+    return input;
+}
+
+int calculateSeconds(int hours, int minutes, int seconds)
+{
+    return (360 * hours) + (60 * minutes) + seconds;
+}
+
+string formatOuput(int hours, int minutes, int seconds)
+{
+	string output = "";
     
     if (hours == 1)
     	output += to_string(hours) += " Hour, ";
@@ -56,12 +61,5 @@ int main()
     
     output += to_string(calculateSeconds(hours, minutes, seconds)) += " seconds.";
 
-    cout << output << endl;
-    
-    return 0;
-}
-
-int calculateSeconds(int hours, int minutes, int seconds)
-{
-    return (360 * hours) + (60 * minutes) + seconds;
+    return output;
 }
