@@ -37,7 +37,26 @@ int main()
         cin >> seconds;
     };
 
-    cout << hours << " Hours, " << minutes << " Minutes, " << seconds << " Seconds = " << calculateSeconds(hours, minutes, seconds) << " seconds." << endl;
+    string output = "";
+    
+    if (hours == 1)
+    	output += to_string(hours) += " Hour, ";
+    else
+    	output += to_string(hours) += " Hours, ";
+    
+    if (minutes == 1)
+    	output += to_string(minutes) += " Minute and ";
+    else
+    	output += to_string(minutes) += " Minutes and ";
+    
+    if (seconds == 1)
+    	output += to_string(seconds) += " Second = ";
+    else
+    	output += to_string(seconds) += " Seconds = ";
+    
+    output += to_string(calculateSeconds(hours, minutes, seconds)) += " seconds.";
+
+    cout << output << endl;
     
     return 0;
 }
