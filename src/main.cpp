@@ -10,7 +10,7 @@ int main()
 {
     cout << "Please enter a length of time:" << endl;
     
-    int hours = getInputFromUser("Hours", 9999);
+    int hours = getInputFromUser("Hours", 5965222);  // Any higher will cause an incorrect answer
     int minutes = getInputFromUser("Minutes", 59);
     int seconds = getInputFromUser("Seconds", 59);
 
