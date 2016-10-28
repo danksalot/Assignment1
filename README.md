@@ -11,7 +11,7 @@ First, enter the hours: **10**
 
 Next, enter the minutes: **30**
 
-Finally, enter the seconds:**30**
+Finally, enter the seconds: **30**
 
 10 hours, 30 minutes, 30 seconds = 37830 seconds
 
