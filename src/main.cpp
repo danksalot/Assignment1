@@ -42,7 +42,7 @@ int calculateSeconds(int hours, int minutes, int seconds)
 
 string formatOuput(int hours, int minutes, int seconds)
 {
-	string output = "";
+    string output = "";
     
     if (hours == 1)
     	output += to_string(hours) += " Hour, ";
