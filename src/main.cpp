@@ -1,7 +1,9 @@
+#include <climits>
 #include <iostream>
 
 using namespace std;
 
+int calculateMaxHours();
 int getInputFromUser(string, int);
 int calculateSeconds(int, int, int);
 string formatOuput(int, int, int);
@@ -10,13 +12,23 @@ int main()
 {
     cout << "Please enter a length of time:" << endl;
     
-    int hours = getInputFromUser("Hours", 5965222);  // Any higher could cause an incorrect answer
+    int hours = getInputFromUser("Hours", calculateMaxHours());
     int minutes = getInputFromUser("Minutes", 59);
     int seconds = getInputFromUser("Seconds", 59);
 
     cout << formatOuput(hours, minutes, seconds) << endl;
     
     return 0;
+}
+
+int calculateMaxHours()
+{
+    // We don't want to overflow the integer that holds the total seconds at the end
+    // So we'll assume that the user will enter the max minutes (59 * 60 seconds) and the max seconds (59)
+    // Then we'll return the max whole hours the user can enter without overflow.
+    
+    int maxSecondsThatWeCanDevoteToHours = INT_MAX - (59 * 60) - 59;
+    return maxSecondsThatWeCanDevoteToHours / 360;
 }
 
 int getInputFromUser(string unit, int max)
