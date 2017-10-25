@@ -1,6 +1,6 @@
 # Duration Converter
 
-# Assignment 1
+# Assignment:
 Write a program that asks the user to enter a time duration in hours, minutes, and seconds and then displays the time in terms of seconds in decimal format. There are 60 minutes in an hour, and there are 60 seconds in a minute. Represent these number of minutes in an hours and number of seconds in a minute as constant in your program. You should use a separate variable for each input value.
 
 Please make sure that minutes and seconds are less than or equal to 59. If the users enter this more than 59 or negative it should be asking him to re-enter the information. 
